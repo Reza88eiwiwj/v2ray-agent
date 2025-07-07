@@ -1,0 +1,17 @@
+name: Deploy V2Ray
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+    - name: Run install script
+      run: |
+        curl -O https://raw.githubusercontent.com/mack-a/v2ray-agent/main/install.sh
+        bash install.sh
